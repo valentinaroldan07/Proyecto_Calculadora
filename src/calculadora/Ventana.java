@@ -12,7 +12,7 @@ public class Ventana extends JFrame {
 
     JPanel panelInicio = new JPanel();
     JTextField txtValor1 = new JTextField();
-    int valor1 = 0;
+    double valor1 = 0;
     char simbolo;
 
     public Ventana() {
@@ -221,7 +221,7 @@ public class Ventana extends JFrame {
                 if (txtValor1.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Debe ingresar un valor");
                 }else{
-                    valor1 += Integer.parseInt(txtValor1.getText());
+                    valor1 += Double.parseDouble(txtValor1.getText());
                     simbolo = '+';
                     txtValor1.setText("");
                 }
@@ -239,9 +239,9 @@ public class Ventana extends JFrame {
                     JOptionPane.showMessageDialog(null, "Debe ingresar un valor");
                 } else {
                     if (valor1 == 0) {
-                        valor1 = Integer.parseInt(txtValor1.getText());
+                        valor1 = Double.parseDouble(txtValor1.getText());
                     } else {
-                        valor1 -= Integer.parseInt(txtValor1.getText());
+                        valor1 -= Double.parseDouble(txtValor1.getText());
                     }
                     simbolo = '-';
                     txtValor1.setText("");
@@ -261,9 +261,9 @@ public class Ventana extends JFrame {
                     JOptionPane.showMessageDialog(null, "Debe ingresar un valor");
                 } else {
                     if (valor1 == 0) {
-                        valor1 = Integer.parseInt(txtValor1.getText());
+                        valor1 = Double.parseDouble(txtValor1.getText());
                     } else {
-                        valor1 -= Integer.parseInt(txtValor1.getText());
+                        valor1 -= Double.parseDouble(txtValor1.getText());
                     }
                     simbolo = 'x';
                     txtValor1.setText("");
@@ -283,9 +283,9 @@ public class Ventana extends JFrame {
                     JOptionPane.showMessageDialog(null, "Debe ingresar un valor");
                 } else {
                     if (valor1 == 0) {
-                        valor1 = Integer.parseInt(txtValor1.getText());
+                        valor1 = Double.parseDouble(txtValor1.getText());
                     } else {
-                        valor1 -= Integer.parseInt(txtValor1.getText());
+                        valor1 -= Double.parseDouble(txtValor1.getText());
                     }
                     simbolo = '÷';
                     txtValor1.setText("");
@@ -321,15 +321,15 @@ public class Ventana extends JFrame {
         ActionListener resultado = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int resultado = 0;
+                double resultado = 0;
                 if (simbolo == '+') {
-                    resultado = valor1 + Integer.parseInt(txtValor1.getText());
+                    resultado = valor1 + Double.parseDouble(txtValor1.getText());
                 } else if (simbolo == '-') {
-                    resultado = valor1 - Integer.parseInt(txtValor1.getText());
+                    resultado = valor1 - Double.parseDouble(txtValor1.getText());
                 }else if (simbolo == 'x') {
-                    resultado = valor1 * Integer.parseInt(txtValor1.getText());
+                    resultado = valor1 * Double.parseDouble(txtValor1.getText());
                 }else if (simbolo == '÷') {
-                    resultado = valor1 /  Integer.parseInt(txtValor1.getText());
+                    resultado = valor1 /  Double.parseDouble(txtValor1.getText());
                 }
                 txtValor1.setText(String.valueOf(resultado));
                 valor1 = 0;
